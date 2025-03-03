@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Platform
 
-## Getting Started
+Bu loyiha Next.js 13 da yaratilgan sodda e-commerce platformadir. Loyihada mahsulotlarni ko'rish va sotib olish imkoniyatlari mavjud.
 
-First, run the development server:
+## 🚀 Texnologiyalar
+
+- **Next.js 13** - Server va mijoz tomonida tezkor ishlovchi React framework.
+- **TypeScript** - Kodingizni yanada ishonchli va mustahkam qilish uchun.
+- **Tailwind CSS** - Chiroyli va zamonaviy UI yaratish uchun.
+
+
+
+## 🔧 O'rnatish va Ishga Tushirish
+
+Loyihani klonlash va ishga tushirish uchun quyidagi bosqichlarni bajaring:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Repositoryni klonlash
+git clone https://github.com/shokirovoff/e-commers-uz.git
+cd repository
+
+# Zaruriy bog'liqliklarni o'rnatish
+npm install  # yoki yarn install
+
+# Lokal serverni ishga tushirish
+npm run dev  # yoki yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Brauzerda [http://localhost:3000](http://localhost:3000) sahifasiga tashrif buyuring.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Loyiha Tuzilishi
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+📦 project-root
+├── 📂 app          # Next.js app directory
+│   ├── 📂 components  # UI komponentlari
+│   ├── 📂 pages       # Sahifalar
+│   ├── 📂 utils       # Yordamchi funksiyalar
+│   ├── 📂 styles      # CSS va styling fayllar
+│   ├── 📂 public      # Statik fayllar
+└── package.json      # Bog‘liqliklar va skriptlar
+```
 
-## Learn More
+## 🌍 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+Loyihani Vercel platformasida osongina deploy qilish mumkin:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Yoki Vercel veb interfeysidan foydalanib deploy qilishingiz mumkin: [Deploy to Vercel](https://vercel.com/new)
 
-## Deploy on Vercel
+## 📚 Qo‘shimcha Resurslar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js rasmiy hujjatlari](https://nextjs.org/docs)
+- [Vercel platformasi](https://vercel.com)
+- [Tailwind CSS dokumentatsiyasi](https://tailwindcss.com/docs)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Muallif
+
+**Baxtiyor Coder** - [GitHub Profil](https://github.com/shokirovoff)
+
+Loyiha har qanday taklif va yaxshilash uchun ochiq! O‘z fikr-mulohazalaringizni bildirishdan tortinmang. 🚀
+
