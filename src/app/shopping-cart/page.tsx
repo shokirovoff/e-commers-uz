@@ -8,62 +8,58 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 const ShoppingCart = () => {
+
 	const [total, setTotal] = useState<number>(0);
-	const [products, setProducts] = useState<ProductType[]>(
-		JSON.parse(localStorage.getItem('carts') as string) || []
-	);
+const [products, setProducts] = useState<ProductType[]>([]);
 
-	const removeProduct = (id: number) => {
-		const updatedCart = products.filter(product => product.id !== id);
-		localStorage.setItem('carts', JSON.stringify(updatedCart));
-		setProducts(updatedCart);
-	};
+useEffect(() => {
+    const storedCart = localStorage.getItem('carts');
+    if (storedCart) {
+        setProducts(JSON.parse(storedCart));
+    }
+}, []);
 
-	const handleIncrement = (id: number) => {
-		const updatedCart = products.map(product => {
-			if (product.id === id) {
-				return {
-					...product,
-					quantity: product.quantity + 1,
-				};
-			}
+const removeProduct = (id: number) => {
+    const updatedCart = products.filter(product => product.id !== id);
+    localStorage.setItem('carts', JSON.stringify(updatedCart));
+    setProducts(updatedCart);
+};
 
-			return product;
-		});
+const handleIncrement = (id: number) => {
+    const updatedCart = products.map(product => {
+        if (product.id === id) {
+            return { ...product, quantity: product.quantity + 1 };
+        }
+        return product;
+    });
 
-		localStorage.setItem('carts', JSON.stringify(updatedCart));
-		setProducts(updatedCart);
-	};
+    localStorage.setItem('carts', JSON.stringify(updatedCart));
+    setProducts(updatedCart);
+};
 
-	const handleDecrement = (id: number) => {
-		const existProduct = products.find(product => product.id === id);
+const handleDecrement = (id: number) => {
+    const existProduct = products.find(product => product.id === id);
 
-		if (existProduct?.quantity === 1) {
-			removeProduct(existProduct.id);
-		} else {
-			const updatedCart = products.map(product => {
-				if (product.id === id) {
-					return {
-						...product,
-						quantity: product.quantity - 1,
-					};
-				}
+    if (existProduct?.quantity === 1) {
+        removeProduct(existProduct.id);
+    } else {
+        const updatedCart = products.map(product => {
+            if (product.id === id) {
+                return { ...product, quantity: product.quantity - 1 };
+            }
+            return product;
+        });
 
-				return product;
-			});
+        localStorage.setItem('carts', JSON.stringify(updatedCart));
+        setProducts(updatedCart);
+    }
+};
 
-			localStorage.setItem('carts', JSON.stringify(updatedCart));
-			setProducts(updatedCart);
-		}
-	};
+useEffect(() => {
+    const totalPrice = products.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    setTotal(totalPrice);
+}, [products]);
 
-	useEffect(() => {
-		const total = products.reduce((acc, item) => {
-			return acc + item.price * item.quantity;
-		}, 0);
-
-		setTotal(total);
-	}, [products]);
 
 	return (
 		<>
@@ -259,3 +255,4 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
+
