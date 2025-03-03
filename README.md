@@ -60,6 +60,7 @@ Yoki Vercel veb interfeysidan foydalanib deploy qilishingiz mumkin: [Deploy to V
 ## 👨‍💻 Muallif
 
 **Baxtiyor Coder** - [GitHub Profil](https://github.com/shokirovoff)
+** Demo ** : https://e-commers-uz.vercel.app/
 
 Loyiha har qanday taklif va yaxshilash uchun ochiq! O‘z fikr-mulohazalaringizni bildirishdan tortinmang. 🚀
 
